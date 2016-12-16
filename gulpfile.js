@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var useref = require('gulp-useref');
+var uglify = require('gulp-uglify');
+var gulpIf = require('gulp-if');
 
 gulp.task('hello', function(){
   console.log('Hello Zell');
@@ -15,8 +17,6 @@ gulp.task('sass',function(){
       stream: true
     }));
 })
-
-
 
 gulp.task('watch', ['browserSync', 'sass'], function(){
   gulp.watch('app/scss/**/*.scss',['sass']);
@@ -36,5 +36,7 @@ gulp.task('browserSync', function(){
 gulp.task('useref', function(){
   return gulp.src('app/*.html')
     .pipe(useref())
+    // Minifies only if it's a JavaScript file
+    .pipe(gulpIf('*.js', uglify()))
     .pipe(gulp.dest('dist'))
 })

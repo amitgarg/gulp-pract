@@ -21,6 +21,8 @@ Watching Sass files for changes
 Optimizing CSS and JavaScript files
   Concatenation
     using gulp plugin gulp-useref
+      $ npm install gulp-useref --save-dev
+
       <!-- build:<type> <path> -->
       ... HTML Markup, list of script / link tags.
       <!-- endbuild -->
@@ -31,3 +33,9 @@ Optimizing CSS and JavaScript files
       <path> here refers to the target path of the generated file.
 
       files will be cancatenated in the same order they appear in the build block
+
+  Minification
+    using gulp-uglify and gulp-if(conditional)
+      $ npm install gulp-uglify --save-dev 
+
+      just add the plugin in the pipeline of concatenation task
