@@ -35,7 +35,13 @@ Optimizing CSS and JavaScript files
       files will be cancatenated in the same order they appear in the build block
 
   Minification
-    using gulp-uglify and gulp-if(conditional)
-      $ npm install gulp-uglify --save-dev 
+    JS
+      using gulp-uglify and gulp-if(conditional)
+        $ npm install gulp-uglify --save-dev 
 
-      just add the plugin in the pipeline of concatenation task
+        just add the plugin in the pipeline of concatenation task
+    CSS
+      using gulp-cssnano and gulp-if
+        $ npm install gulp-cssnano --save-dev
+
+        similarly add in the pipeline 
