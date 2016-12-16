@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
+var useref = require('gulp-useref');
 
 gulp.task('hello', function(){
   console.log('Hello Zell');
@@ -30,4 +31,10 @@ gulp.task('browserSync', function(){
       baseDir: 'app'
     }
   })
+})
+
+gulp.task('useref', function(){
+  return gulp.src('app/*.html')
+    .pipe(useref())
+    .pipe(gulp.dest('dist'))
 })

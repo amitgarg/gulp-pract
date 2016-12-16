@@ -17,3 +17,17 @@ Globbing Patterns
 Watching Sass files for changes
   watch method
     gulp.watch('files-to-watch', ['tasks', 'to', 'run']); 
+
+Optimizing CSS and JavaScript files
+  Concatenation
+    using gulp plugin gulp-useref
+      <!-- build:<type> <path> -->
+      ... HTML Markup, list of script / link tags.
+      <!-- endbuild -->
+
+      <type> can either be js, css, or remove.
+      If you set type to remove, Gulp will remove the entire build block without generating a file.
+
+      <path> here refers to the target path of the generated file.
+
+      files will be cancatenated in the same order they appear in the build block
