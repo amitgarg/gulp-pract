@@ -53,3 +53,24 @@ Cleaning up generated files automatically
   Since we're generating files automatically, we'll want to make sure that files that are no longer used don't remain anywhere without us knowing. 
 
   npm install del --save-dev
+
+Combining Gulp tasks
+  Grouping
+    gulp.task('task-name', 
+    ['tasks','to','be','executed','before','this'],function(){} 
+    });
+    All the tasks in the list will be started in parallel
+
+  Sequencing
+    use plugin run-sequence
+
+    $ npm install run-sequence --save-dev
+
+    gulp.task('task-name', function(callback) {
+      runSequence('task-one', 'task-two', 'task-three', callback);
+    });
+
+    you can run some tasks simultaneously as well
+    gulp.task('task-name', function(callback) {
+      runSequence('task-one', ['tasks','two','run','in','parallel'], 'task-three', callback);
+    });
