@@ -45,3 +45,6 @@ Optimizing CSS and JavaScript files
         $ npm install gulp-cssnano --save-dev
 
         similarly add in the pipeline 
+
+Copying Fonts to Dist
+  Since font files are already optimized, there's nothing more we need to do. All we have to do is to copy the fonts into dist. 
