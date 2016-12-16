@@ -48,3 +48,8 @@ Optimizing CSS and JavaScript files
 
 Copying Fonts to Dist
   Since font files are already optimized, there's nothing more we need to do. All we have to do is to copy the fonts into dist. 
+
+Cleaning up generated files automatically
+  Since we're generating files automatically, we'll want to make sure that files that are no longer used don't remain anywhere without us knowing. 
+
+  npm install del --save-dev

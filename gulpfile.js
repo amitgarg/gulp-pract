@@ -5,6 +5,7 @@ var useref = require('gulp-useref');
 var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
 var cssnano = require('gulp-cssnano');
+var del = require('del');
 
 gulp.task('hello', function(){
   console.log('Hello Zell');
@@ -46,4 +47,8 @@ gulp.task('useref', function(){
 gulp.task('fonts', function(){
   return gulp.src('app/fonts/**/*')
     .pipe(gulp.dest('dist/fonts'))
+})
+
+gulp.task('clean:dist', function(){
+  return del.sync('dist');
 })
